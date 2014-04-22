@@ -52,11 +52,33 @@ public class Matchmaker {
 			int companyRank = companyRanker.getRank(companyName);
 			double companyDistance = ZipDistCalc.calcDistance(latitude, longitude, user.getLatitude(), user.getLongitude());
 
-			String userResumeFilename = user.getResumeFilename();
-			String userSkillsFilename = user.getSkillsFilename();
+			String userResumeFilename = null;
 
-			double resumeDescriptionMatch = (new ResumeJDComparison(userResumeFilename, jdFilename)).percentMatch();
-			double skillMatch = (new SkillsJDComparison(userSkillsFilename, jobSkillsFilename)).percentMatch();
+			if (user.hasResume()) {
+				userResumeFilename = user.getResumeFilename();
+			} 
+
+			String userSkillsFilename = null;
+
+			if (user.hasSkills()) {
+				userSkillsFilename = user.getSkillsFilename();
+			}
+
+			double resumeDescriptionMatch;
+			double skillMatch;
+
+			if (user.hasResume()) {
+				resumeDescriptionMatch = (new ResumeJDComparison(userResumeFilename, jdFilename)).percentMatch();
+			} else {
+				resumeDescriptionMatch = 0;
+			}
+
+			if (user.hasSkills()) {
+				skillMatch = (new SkillsJDComparison(userSkillsFilename, jobSkillsFilename)).percentMatch();
+			} else {
+				skillMatch = 0;
+			}
+
 
 			job.setRank(jobMetric(skillMatch, rankToCompanyWeight(companyRank), distanceMetric(companyDistance), resumeDescriptionMatch));
 
