@@ -1,0 +1,30 @@
+		Objective
+Software Engineering Internship for Summer 2015.
+		
+		Experience
+Summer Intern at NASA Ames Research Center	July-Aug 2013
+Worked on EGraClus: Evolutionary Graph Clustering Algorithm. Used linear algebra and graph algorithm techniques to provide enhancements to the clustering algorithm. Utilized the Twitter API to develop dynamic social networking graphs in order to provide test cases for the algorithm, using Python and MATLAB. I also developed pixel data analysis tools used for terrain analysis.
+Winter Intern at NASA Ames Research Center	January 2014
+I worked on software for evaluating airline fuel consumption in MATLAB. I added to and modified the code to ensure functionality and efficient runtime, as well as adjusting portions to run distributedly. 
+		
+		Education
+University of California, Berkeley. B.S. Electrical Engineering & Computer Science (EECS). 
+Sophomore. GPA: 3.625
+Relevant Coursework: 
+CS61A (Structure And Interpretation of Computer Programs) 
+CS61B (Data Structures and Advanced Programming) 
+CS61C (Machine Structures)
+CS70 (Discrete Mathematics & Probability Theory)
+CS170 (Efficient Algorithms & Intractable Problems) 
+CS161 (Computer Security)
+		
+		Skills/Projects
+Programming Languages: Python, Java, C, MATLAB, Perl, C++
+Work on Crystalball
+Enhanced a chip floor-planning tool used at Cisco. Wrote Perl scripts to ensure sub-blocks of chips
+were organized correctly.
+Map Reduce and Hadoop
+Used Map Reduce over Amazon EC2 to determine word correlation in documents. 
+Network
+Interactive representation of the game network that uses a computer player with artificial intelligence.
+
