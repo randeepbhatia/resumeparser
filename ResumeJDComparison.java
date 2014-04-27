@@ -54,8 +54,11 @@ public class ResumeJDComparison {
 
 		}
 
-		this.percentMatch = ((double) numMatch) / jobDict.size(); //Number of resume matched words divided by number of words in JD
-
+		if (jobDict.size() > 0) {
+			this.percentMatch = ((double) numMatch) / jobDict.size(); //Number of resume matched words divided by number of words in JD
+		} else {
+			this.percentMatch = 0;
+		}
 
 	}
 
