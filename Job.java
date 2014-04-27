@@ -1,6 +1,3 @@
-import java.io.*;
-import java.util.*;
-
 /* Stores all the information for a job */
 
 public class Job implements Comparable<Job>{
@@ -79,6 +76,7 @@ public class Job implements Comparable<Job>{
 		return companyName;
 	}
 
+	//This is the relative value of the job
 	public double getRank() {
 		return this.jobRank;
 	}
