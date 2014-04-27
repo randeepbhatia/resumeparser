@@ -1,8 +1,29 @@
 import java.util.*;
-import java.io.*;
+
 
 public class Matchmaker {
 
+	
+	private double skillsWeight = .4;
+	private double companyValueWeight = .3;
+	private double distanceWeight = .2;
+	private double resumeWeight = .1;
+	
+	public double getSkillsWeight() {
+		return skillsWeight;
+	}
+	
+	public double getCompanyValueWeight() {
+		return companyValueWeight;
+	}
+	
+	public double getDistanceWeight() {
+		return distanceWeight;
+	}
+	
+	public double getResumeWeight() {
+		return resumeWeight;
+	}
 
 	//Converts rank to a double between 0 and 1, 1 being the best
 	private double rankToCompanyWeight(int rank) {
@@ -19,8 +40,14 @@ public class Matchmaker {
 		//Weights should add to 1. Change accordingly
 		//All inputs to this function should be between 0 and 1 based on how good each one is (0 being bad, 1 being good)
 
-		return .4 * skillMatch + .3 * companyValue + .2 * companyDistanceMetric + .1 * resumeDescriptionMatch;
+		return skillsWeight * skillMatch + companyValueWeight * companyValue + distanceWeight * companyDistanceMetric + resumeWeight * resumeDescriptionMatch;
 
+	}
+
+	//For dice
+	private double jobMetric(double skillMatch, double companyDistanceMetric) {
+		double scalingFactor = 1.0/(skillsWeight + distanceWeight);
+		return scalingFactor * (skillsWeight * skillMatch + distanceWeight * companyDistanceMetric);
 	}
 
 
@@ -47,7 +74,7 @@ public class Matchmaker {
 			double latitude = job.getLatitude();
 			double longitude = job.getLongitude();
 
-			Fortune500Ranking companyRanker = new Fortune500Ranking("Fortune500List");
+			Fortune500Ranking companyRanker = new Fortune500Ranking();
 
 			int companyRank = companyRanker.getRank(companyName);
 			double companyDistance = ZipDistCalc.calcDistance(latitude, longitude, user.getLatitude(), user.getLongitude());
