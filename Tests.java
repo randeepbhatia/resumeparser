@@ -37,6 +37,34 @@ public class Tests {
 	}
 	
 	@Test
+	public void blankTest() {
+		
+		System.out.println("\nBlankTest\n");
+		
+		Profile user = new Profile("BlankFile", "BlankFile", 70, 70);
+		
+		Job intelJob = new Job("IBM", "BlankFile", "BlankFile", 69.9, 70.1);
+		Job walmartJob = new Job("Phillips 66", "BlankFile", "BlankFile", 200, 71);
+		Job nasaJob = new Job("Salesforce", "BlankFile", "BlankFile", 0, 500);
+		Job[] jobList = {intelJob, walmartJob, nasaJob};
+		jobList = (new Matchmaker()).sortJobs(user, jobList);
+		//Prints in improving order.
+		for (int i = 0; i < jobList.length; i++) {
+			System.out.println(jobList[i].getCompanyName());
+		}
+
+		for (int i = 0; i < jobList.length; i++) {
+			Job job = jobList[i];
+			System.out.println("Company Name: " + job.getCompanyName());
+			System.out.println("Company Value: " + job.getCompanyValue());
+			System.out.println("Distance: " + job.getDistance());
+			System.out.println("SkillsMatch " + job.getSkillsMatch());
+			System.out.println("Description Match " + job.getDescriptionMatch());
+			System.out.println("Rank: " + job.getRank());
+		}
+	}
+	
+	@Test
 	public void fullFunctionalityTest() {
 		
 		System.out.println("Tests everything\n");
