@@ -5,20 +5,22 @@ import java.util.*;
 
 public class Fortune500Ranking {
 
-	private HashMap<String, Integer> companyToRanking = new HashMap();
-	private String fortuneFilename;
+	private HashMap<String, Integer> companyToRanking = new HashMap<String, Integer>();
+	private String fortuneFilename = "Fortune500List";
 
-	public Fortune500Ranking(String fortuneFilename) {
+	public Fortune500Ranking() {
 
-		this.fortuneFilename = fortuneFilename;
 		this.analyze();
 
 	}
 
+	//Hash map from ranking to integer ranking
 	public HashMap<String, Integer> getRankings() {
 		return companyToRanking;
 	}
 
+
+	//Gets rank of a certain company on fortune 500 list, or returns 0 if not present
 	public int getRank(String companyName) {
 
 		if (companyToRanking.containsKey(companyName)) {
