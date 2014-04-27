@@ -1,6 +1,10 @@
 import java.io.*;
 import java.util.*;
 
+/* Gets skills from file
+ * Requires each line to have a skill phrase followed by number of years of experience
+*/
+
 public class SkillsExtractor {
 
 
