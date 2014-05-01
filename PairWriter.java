@@ -84,21 +84,7 @@ public class PairWriter {
 		
 	}
 	
-	public static void main(String[] argv) {
-		String resume1 = "Resume1";
-		String resume2 = "Resume2";
-		String resume3 = "Resume3";
-		String[] resumes = {resume1, resume2, resume3};
-		String keywordFile = "TestKeywords";
 	
-		PairWriter pairWriter = new PairWriter(resumes, keywordFile);
-
-		Pair[] pairList = pairWriter.getPairs();
-		
-		for (int i = 0; i < pairList.length; i++) {
-			System.out.println(pairList[i].getWord1() + " " + pairList[i].getWord2() + " " + pairList[i].getOccRate());
-		}
-	}
 	
 	
 	
