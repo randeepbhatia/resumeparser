@@ -28,7 +28,7 @@ public class Pair implements Comparable {
 		
 		this.word1 = word1;
 		this.word2 = word2;
-		
+		this.occRate = 1;
 	}
 	
 	public Pair(String word1, String word2, int occRate) {
